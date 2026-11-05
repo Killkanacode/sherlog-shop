@@ -9,7 +9,7 @@ VOLUME_DISCOUNT_TIERS = ((10, 0.10), (5, 0.05))  # (min units, discount)
 
 def order_total(lines: list[dict]) -> int:
     """Total in cents for reserved lines."""
-    return sum(line["price"] * line["qty"] for line in lines)
+    return sum(line["unit_price"] * line["qty"] for line in lines)
 
 
 def order_total_volume_discount(lines: list[dict]) -> float:
